@@ -6,7 +6,6 @@ export const List = styled.ul`
   display: flex;
   gap: 20px;
   flex-direction: column;
-  align-content: space-between;
 `;
 
 export const ListItem = styled.li`
@@ -16,7 +15,7 @@ export const ListItem = styled.li`
 
 export const DeleteBtn = styled.button`
   padding: 5px 20px;
-  border-radius: 4px;
+  border-radius: 5px;
   border: 2px solid #054a91;
   font-weight: 600;
   font-size: 14px;
