@@ -24,9 +24,7 @@ export class App extends Component {
       id: nanoid(),
     };
 
-    if (
-      this.state.contacts.filter(contact => data.name === contact.name).length
-    ) {
+    if (this.state.contacts.find(contact => data.name === contact.name)) {
       alert(`${newContact.name} is already in contacts`);
     } else {
       this.setState(prevState => ({
@@ -54,16 +52,10 @@ export class App extends Component {
     return (
       <Wrapper>
         <PhonebookTitle>Phonebook</PhonebookTitle>
-        <ContactForm onSubmit={this.formSubmitHandler}></ContactForm>
+        <ContactForm onSubmit={this.formSubmitHandler} />
         <ContactsTitle>Contacts</ContactsTitle>
-        <Filter
-          filter={this.state.filter}
-          onChange={this.changeFilter}
-        ></Filter>
-        <ContactList
-          contacts={visibleContacts}
-          onDelete={this.deleteContsct}
-        ></ContactList>
+        <Filter filter={this.state.filter} onChange={this.changeFilter} />
+        <ContactList contacts={visibleContacts} onDelete={this.deleteContsct} />
       </Wrapper>
     );
   }
